@@ -11,5 +11,15 @@
  *                   */
 
 const rockPaperScissors = () => {
-	// TODO: your solution here
+	const choices = ['rock', 'paper', 'scissors'];
+	let output = [];
+	
+	choices.forEach(choice => {
+		for (let i = 0; i < 3; i++) {
+			for (let j = 0; j < 3; j++) {
+				output.push([choice, choices[i], choices[j]]);
+			}
+		}
+	});
+	return output;
 };
