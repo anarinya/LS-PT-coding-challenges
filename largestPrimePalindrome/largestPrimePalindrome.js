@@ -5,3 +5,30 @@
  * A palindrome is a number that is the same forwards and backwards: 121, 323, 123454321, etc.
  */
 
+const num = 929;
+
+const isPalindrome = (n) => {
+  return n === parseInt(n.toString().split('').reverse().join(''));
+};
+
+const isPrime = (n) => {
+  const sqNum = Math.round(Math.sqrt(n));
+  if (n % 2 === 0) return false;
+  
+  for (let i = 3; i < sqNum; i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+};
+
+const largestLimitedPrimePalindrome = (limit) => {
+  while (limit) {
+    if (isPalindrome(limit)) {
+      if (isPrime(limit)) return limit;
+    }
+  }
+
+  return largestLimitedPrimePalindrome(limit--);
+};
+
+console.log(largestLimitedPrimePalindrome(1000));

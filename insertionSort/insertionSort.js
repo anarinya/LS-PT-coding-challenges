@@ -9,8 +9,20 @@
 
 // Example usage:
 // insertionSort([2, 1, 3, 7, 4, 2, 9, 3, 8]); // yields [1, 2, 2, 3, 3, 4, 7, 8, 9]
+const arr = [2, 1, 3, 7, 4, 2, 9, 3, 8];
 
 const insertionSort = (array) => {
-  // Your code goes here. Feel free to add helper functions if needed.
+  for (let i = 0; i < array.length; i++) {
+    let currentVal = array[i];
+    let prevIndex = i - 1;
+
+    while (prevIndex >= 0 && array[prevIndex] > currentVal) {
+      array[prevIndex + 1] = array[prevIndex];
+      prevIndex--;
+    }
+    array[prevIndex + 1] = currentVal;
+  }
   return array;
 };
+
+console.log(insertionSort(arr));
