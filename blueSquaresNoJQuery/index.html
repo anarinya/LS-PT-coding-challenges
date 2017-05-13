@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>blueSquaresNoJQuery</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      margin: 15px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+
+  <script>
+    const squares = document.getElementsByClassName('square');
+    
+    for (let i = 0; i < squares.length; i++) {
+      squares[i].addEventListener('click', function() {
+        this.style.backgroundColor = 'blue';
+      });
+    }
+  </script>
+</body>
+</html>
