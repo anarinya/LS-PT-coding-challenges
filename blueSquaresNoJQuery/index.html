@@ -43,14 +43,19 @@
       const { target, target: { className } } = event;
 
       if (className.indexOf('blue') === -1) {
-        target.className += ' blue';
-      } else {
-        target.className = className.replace('blue', '');
-      }
+        return target.className += ' blue';
+      } 
+      
+      return target.className = className.replace('blue', '');
     };
     
     for (let i = 0; i < squares.length; i++) {
-      squares[i].addEventListener('click', toggleClass);
+      if (squares[i].addEventListener) {
+        squares[i].addEventListener('click', toggleClass);
+      } else {
+        squares[i].attachEvent('click', toggleClass);
+      }
+      
     }
   </script>
 </body>
