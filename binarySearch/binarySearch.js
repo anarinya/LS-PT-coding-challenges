@@ -5,11 +5,6 @@
  * https://en.wikipedia.org/wiki/Binary_search_algorithm
  * */
 
-/**
-const index = binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2);
- *	* console.log(index); // 1
-**/
-
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const binarySearch = (nums, target) => {
@@ -27,4 +22,9 @@ const binarySearch = (nums, target) => {
   return -1;
 };
 
+/*
 console.log(binarySearch(arr, 5));
+
+ *  * const index = binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2);
+ *	* console.log(index); // 1
+**/

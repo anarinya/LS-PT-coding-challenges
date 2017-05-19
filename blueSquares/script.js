@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
 $(document).ready(function() {
   $('div').on('click', function() {
@@ -17,4 +18,7 @@ $(document).ready(() => {
 <<<<<<< HEAD
 */
 =======
+>>>>>>> upstream/master
+=======
+console.log('hello');
 >>>>>>> upstream/master
