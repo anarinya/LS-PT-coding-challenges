@@ -1,0 +1,14 @@
+{
+  "name": "linked-list-reversal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linkedListReversal.js",
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^20.0.3"
+  }
+}
