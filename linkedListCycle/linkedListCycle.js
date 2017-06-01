@@ -29,3 +29,50 @@
  * Constraint 3: Do not mutate the original nodes in any way
  * Hint: Search for Floyd's Tortoise and Hare algorithm.
  */
+class Node {
+  constructor(value, next) {
+    this.value = value;
+    this.next = (next !== null) ? next : null;
+  }
+
+  appendTo(value) {
+    return new Node(value, this);
+  }
+
+  tailNode() {
+    let nextThis = this.next || null;
+    return (nextThis !== null ? nextThis.tailNode() : null || this);
+  }
+}
+
+const hasCycle = (list) => {
+  let tortoise, hare, nextHare;
+  tortoise = list;
+  hare = list.next;
+  while ((tortoise !== null) && (hare != null)) {
+    if (tortoise === hare) return true;
+    tortoise = tortoise.next;
+    hare = (nextHare = hare.next) !== null ? nextHare.next : void 0;
+  }
+  return false;
+};
+
+const list = new Node('A')
+  .appendTo('B')
+  .appendTo('C')
+  .appendTo('D')
+  .appendTo('E');
+
+
+const nodeA = new Node('A');
+const nodeB = nodeA.next = new Node('B');
+const nodeC = nodeB.next = new Node('C');
+const nodeD = nodeC.next = new Node('D');
+const nodeE = nodeD.next = new Node('E');
+
+console.log(hasCycle(list));
+list.tailNode().next = list.next;
+console.log(hasCycle(list));
+console.log(hasCycle(nodeA));
+nodeE.next = nodeB;
+console.log(hasCycle(nodeB));
