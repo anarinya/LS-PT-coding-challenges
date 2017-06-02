@@ -1,0 +1,14 @@
+{
+  "name": "operators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "operators.js",
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^20.0.3"
+  }
+}
