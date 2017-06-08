@@ -11,15 +11,20 @@
 
 const NAND = (x, y) => {
 	// You can use whatever JS operators that you would like: &&, ||, !
+	if (!x && !y) return 1;
+	else if (!x && y || x && !y) return 0;
+	else return 0;
 };
 
 const NOT = (n) => {
 	// Do not use !, &&, or ||
+	return NAND(n, n);
 };
 
 const AND = (x, y) => {
 	// Do not use &&, ||, or !
 	// You can use any of the functions that you have already written
+	return NAND(NAND(x, y), NAND(x, y));
 };
 
 const OR = (x, y) => {
@@ -30,4 +35,8 @@ const OR = (x, y) => {
 const XOR = (x, y) => {
 	// Do not use ||, &&, or !
 	// You can use any of the functions that you have already written
+};
+
+module.exports = {
+	NAND, NOT, AND, OR, XOR
 };
